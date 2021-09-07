@@ -1,3 +1,4 @@
+package OwnCollection;
 
 public class Stack {
 
