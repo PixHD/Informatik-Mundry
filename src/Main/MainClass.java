@@ -5,7 +5,6 @@ import OwnCollection.Stack;
 public class MainClass {
 
 
-
     public static void main(String[] args) {
         Stack s = new Stack(10);
         s.push("Hallo");
@@ -13,8 +12,5 @@ public class MainClass {
         s.pop();
         System.out.println(s.isEmpty());
 
-
-        //Test
-        System.out.println("Ses");
     }
 }
