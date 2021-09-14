@@ -16,6 +16,9 @@ public class Queue {
     }
 
     public void enqueue(Object o) {
+        this.queue[front + 1] = o;
+        this.front++;
+        this.count++;
 
     }
 
