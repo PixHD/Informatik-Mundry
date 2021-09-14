@@ -18,15 +18,21 @@ public class Queue {
     }
 
     public void enqueue(Object o) {
-
+        tail++;
+        queue[tail] = o;
+        count++;
     }
 
     public void dequeue() {
-
+        if(!isEmpty()) {
+            front--;
+            count--;
+            tail= (tail+1)%count;
+        }
     }
 
     public boolean isEmpty() {
-        return false;
+        return count==0;
     }
 
     public Object front() {
