@@ -20,14 +20,17 @@ public class Queue {
     }
 
     public void dequeue() {
-
+        this.front--;
+        this.count--;
     }
 
     public boolean isEmpty() {
-
+        return false;
     }
 
     public Object front() {
-
+        if(!isEmpty()) {
+            return queue[front];
+        }
     }
 }
