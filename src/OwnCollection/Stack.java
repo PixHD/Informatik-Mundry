@@ -23,7 +23,7 @@ public class Stack {
     }
 
     public void push(Object o) {
-        if(index+1 <= stack.length && o != null) {
+        if(index+1 < stack.length && o != null) {
             stack[index+1] = o;
             index++;
             anzahlElemente++;
