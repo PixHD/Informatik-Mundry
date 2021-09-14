@@ -28,12 +28,14 @@ public class Queue {
     }
 
     public boolean isEmpty() {
-        return false;
+        return count==0;
     }
 
     public Object front() {
         if(!isEmpty()) {
             return queue[front];
+        } else {
+            return null;
         }
     }
 }
