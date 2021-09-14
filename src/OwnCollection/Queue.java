@@ -26,7 +26,7 @@ public class Queue {
     }
 
     public boolean isEmpty() {
-
+        return false;
     }
 
     public Object front() {
