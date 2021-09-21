@@ -26,7 +26,7 @@ public class Queue {
     public void dequeue() {
         if(!isEmpty()) {
             if(front==queue.length-1) {
-                front=0;
+                front = 0;
             }else {
                 front++;
             }
