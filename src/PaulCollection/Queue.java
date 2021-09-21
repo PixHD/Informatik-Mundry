@@ -25,6 +25,7 @@ public class Queue {
     public void dequeue() {
         this.front--;
         this.count--;
+        this.tail = (tail++) % count;
     }
 
     public boolean isEmpty() {
