@@ -18,9 +18,11 @@ public class Queue {
     }
 
     public void enqueue(Object o) {
-        queue[tail] = o;
-        tail++;
-        count++;
+        if(count< queue.length) {
+            queue[tail] = o;
+            tail++;
+            count++;
+        }
     }
 
     public void dequeue() {
