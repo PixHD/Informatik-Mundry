@@ -2,10 +2,10 @@ package OwnCollection;
 
 public class Queue {
 
-    private int front;
-    private int tail;
-    private int count;
-    private Object[] queue;
+    public int front;
+    public int tail;
+    public int count;
+    public Object[] queue;
 
     public Queue() {
         front=tail=count=0;
@@ -18,21 +18,21 @@ public class Queue {
     }
 
     public void enqueue(Object o) {
-        tail++;
         queue[tail] = o;
+        tail++;
         count++;
     }
 
     public void dequeue() {
         if(!isEmpty()) {
-            front--;
+            front++;
             count--;
             tail= (tail+1)%count;
         }
     }
 
     public boolean isEmpty() {
-        return count==0;
+        return count<=0;
     }
 
     public Object front() {
