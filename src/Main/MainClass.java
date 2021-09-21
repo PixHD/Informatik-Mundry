@@ -17,9 +17,7 @@ public class MainClass {
         q.enqueue("8");
         q.enqueue("9");
 
-        for (int i = 0; i < q.queue.length; i++) {
-            System.out.print(q.queue[i] + ";");
-        }
+        q.printArray();
         System.out.println();
 
         for (int i = 0; i < 8; i++) {
@@ -37,10 +35,8 @@ public class MainClass {
         q.enqueue("I");
 
         System.out.println();
-        for (int i = 0; i < q.queue.length; i++) {
-            System.out.print(q.queue[i] + ";");
-        }
-
+        q.printArray();
+        System.out.println();
         System.out.println("Front: " + q.front());
 
         for (int i = 0; i < 8; i++) {

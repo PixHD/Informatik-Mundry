@@ -2,10 +2,10 @@ package OwnCollection;
 
 public class Queue {
 
-    public int front;
-    public int tail;
-    public int count;
-    public Object[] queue;
+    private int front;
+    private int tail;
+    private int count;
+    private Object[] queue;
 
     public Queue() {
         front=tail=count=0;
@@ -44,6 +44,12 @@ public class Queue {
             return queue[front];
         }else {
             return null;
+        }
+    }
+
+    public void printArray() {
+        for (int i = 0; i < queue.length; i++) {
+            System.out.print(queue[i] + ";");
         }
     }
 }
