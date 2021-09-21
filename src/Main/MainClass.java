@@ -40,5 +40,15 @@ public class MainClass {
         for (int i = 0; i < q.queue.length; i++) {
             System.out.print(q.queue[i] + ";");
         }
+
+        System.out.println("Front: " + q.front());
+
+        for (int i = 0; i < 8; i++) {
+            q.dequeue();
+        }
+
+        System.out.println("Front: " + q.front());
+
+
     }
 }

@@ -25,7 +25,11 @@ public class Queue {
 
     public void dequeue() {
         if(!isEmpty()) {
-            front++;
+            if(front==queue.length-1) {
+                front=0;
+            }else {
+                front++;
+            }
             count--;
             tail= (tail+1)%count;
         }
