@@ -16,7 +16,6 @@ public class Queue {
         front=tail=count=0;
         queue = new Object[anzahl];
     }
-
     public void enqueue(Object o) throws Exception {
         if(count< queue.length) {
             queue[tail] = o;
