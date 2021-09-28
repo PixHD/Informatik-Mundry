@@ -17,23 +17,22 @@ public class Queue {
         queue = new Object[anzahl];
     }
 
-    public void enqueue(Object o) {
+    public void enqueue(Object o) throws Exception {
         if(count< queue.length) {
             queue[tail] = o;
-            tail++;
+            tail = (tail+1)%queue.length;
             count++;
+        }else {
+            throw new Exception("The Queue is full");
         }
     }
 
-    public void dequeue() {
+    public void dequeue() throws Exception {
         if(!isEmpty()) {
-            if(front==queue.length-1) {
-                front = 0;
-            }else {
-                front++;
-            }
+            front = (front+1)%queue.length;
             count--;
-            tail= (tail+1)%count;
+        }else {
+            throw new Exception("The Queue is Empty");
         }
     }
 
@@ -50,8 +49,12 @@ public class Queue {
     }
 
     public void printArray() {
-        for (int i = 0; i < queue.length; i++) {
-            System.out.print(queue[i] + ";");
+        if(!isEmpty()) {
+            for (Object o : queue) {
+                System.out.print(o + ";");
+            }
+        }else {
+            System.out.println("The Array is empty");
         }
     }
 }
