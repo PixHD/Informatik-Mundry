@@ -10,10 +10,10 @@ import java.util.ArrayList;
 
 public class StackAL {
     private int length, index, count;
-    private ArrayList<Object> Stack = new ArrayList<>();
 
-    public StackAL() {
-
+    public StackAL(Object o) {
+        o.getClass() = Class;
+        ArrayList<> Stack = new ArrayList<>();
     }
     /**
      * Returns true if Stack is completly empty
