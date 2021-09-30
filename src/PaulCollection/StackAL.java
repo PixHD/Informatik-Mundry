@@ -1,6 +1,7 @@
 package PaulCollection;
 
 import java.util.ArrayList;
+import java.util.Stack;
 
 /**
  * Class that fullfills the funcions of a Stack.
@@ -8,13 +9,24 @@ import java.util.ArrayList;
  * @version 0.0.1
  */
 
-public class StackAL {
-    private int length, index, count;
+public class StackAL<T> {
 
-    public StackAL(Object o) {
-        o.getClass() = Class;
-        ArrayList<> Stack = new ArrayList<>();
+    private ArrayList<T> Stack = new ArrayList<>();
+    private int size;
+
+    public StackAL() {
+
     }
+
+    /**
+     *
+     * @return Size of Stack
+     */
+    public int getSize() {
+        return Stack.size();
+    }
+
+
     /**
      * Returns true if Stack is completly empty
      * @return boolean
@@ -30,12 +42,24 @@ public class StackAL {
         }
     }
 
-    public void push(Object obj) {
-        if(obj != null) {
-            this.Stack.add(obj);
+    /**
+     * Stores an Object in the Stack
+     * @param o Object that is saved in Stack
+     */
+    public void push(Object o) {
+        if(o != null && o.getClass() == ) {
+            try {
+                this.Stack.add((T) o);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
     }
 
+    /**
+     *Returns Object that is on Top of the Stack
+     * @return Object on Top
+     */
     public Object top() {
         if(!this.isEmpty()) {
             int i = this.Stack.size() - 1;

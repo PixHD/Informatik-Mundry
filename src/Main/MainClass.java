@@ -1,12 +1,35 @@
 package Main;
 
-import OwnCollection.Queue;
+import PaulCollection.StackAL;
 
 public class MainClass {
 
 
     public static void main(String[] args) throws Exception {
-        Queue q = new Queue(10);
+
+
+        StackAL<String> Stack = new StackAL<>();
+
+        String t1 = "Test1";
+        String t2 = "Test2";
+        String t3 = "Test3";
+        int x = 9;
+
+        Stack.push(t1);
+        Stack.push(t2);
+        Stack.push(t3);
+        Stack.push(x);
+
+        System.out.println(Stack.getSize());
+
+        System.out.println(Stack.top());
+
+        Stack.pop();
+
+        System.out.println(Stack.getSize());
+
+
+        /*Queue q = new Queue(10);
         q.enqueue("1");
         q.enqueue("2");
         q.enqueue("3");
@@ -31,7 +54,7 @@ public class MainClass {
         }
 
         System.out.println();
-        q.printArray();
+        q.printArray();*/
 
 
     }
