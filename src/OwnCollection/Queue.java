@@ -2,10 +2,10 @@ package OwnCollection;
 
 public class Queue {
 
-    public int front;
-    public int tail;
-    public int count;
-    public Object[] queue;
+    private int front;
+    private int tail;
+    private int count;
+    private Object[] queue;
 
     public Queue() {
         front=tail=count=0;
@@ -16,18 +16,22 @@ public class Queue {
         front=tail=count=0;
         queue = new Object[anzahl];
     }
-
-    public void enqueue(Object o) {
-        queue[tail] = o;
-        tail++;
-        count++;
+    public void enqueue(Object o) throws Exception {
+        if(count< queue.length) {
+            queue[tail] = o;
+            tail = (tail+1)%queue.length;
+            count++;
+        }else {
+            throw new Exception("The Queue is full");
+        }
     }
 
-    public void dequeue() {
+    public void dequeue() throws Exception {
         if(!isEmpty()) {
-            front++;
+            front = (front+1)%queue.length;
             count--;
-            tail= (tail+1)%count;
+        }else {
+            throw new Exception("The Queue is Empty");
         }
     }
 
@@ -40,6 +44,16 @@ public class Queue {
             return queue[front];
         }else {
             return null;
+        }
+    }
+
+    public void printArray() {
+        if(!isEmpty()) {
+            for (Object o : queue) {
+                System.out.print(o + ";");
+            }
+        }else {
+            System.out.println("The Array is empty");
         }
     }
 }
