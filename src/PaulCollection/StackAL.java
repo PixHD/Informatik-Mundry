@@ -13,8 +13,7 @@ public class StackAL {
     private ArrayList<Object> Stack = new ArrayList<>();
 
     public StackAL() {
-        this.index = -1;
-        this.count = 0;
+
     }
     /**
      * Returns true if Stack is completly empty
