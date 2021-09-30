@@ -5,7 +5,7 @@ public class Stack {
     int count;
     Object[] Stack;
 
-    //Standardsignatur, Stackgröße ffestgelegt auf 10
+    //Standardsignatur, Stackgröße festgelegt auf 10
     public Stack() {
         this.index = -1; //Index zeigt auf eine nicht gültige Stelle, da Stack leer
         this.count = 0;
