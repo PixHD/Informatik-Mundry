@@ -3,22 +3,23 @@ package Main;
 import java.util.Locale;
 
 public class Karte implements Comparable<Karte> {
-    private int wert;
+    private String wert;
+    private int wertigkeit;
     private String symbol;
     private String farbe;
-
-    public Karte(int wert, String symbol) {
+    public Karte(int wertigkeit,String wert, String symbol, String farbe) {
+        this.wertigkeit = wertigkeit;
         this.wert = wert;
         this.symbol = symbol.toLowerCase(Locale.ROOT);
-        if(this.symbol.equalsIgnoreCase("pic") || this.symbol.equalsIgnoreCase("kreuz")) {
-            farbe = "schwarz";
-        }else {
-            farbe = "rot" ;
-        }
+        this.farbe = farbe;
     }
 
     @Override
     public int compareTo(Karte k) {
-        return this.wert - k.wert;
+        return this.wertigkeit - k.wertigkeit;
+    }
+
+    public String toString() {
+        return symbol + " " + wert;
     }
 }
