@@ -48,7 +48,19 @@ public class MainClass {
         stapel.enqueue(new Karte(31, "A", "Herz", "rot"));
         stapel.enqueue(new Karte(32, "A", "Karo", "rot"));
 
+        alleKarten(stapel);
+    }
 
-        stapel.printArray();
+    public static void alleKarten(Queue stapel) {
+        int i = 0;
+        while(!stapel.isEmpty()) {
+            System.out.println(stapel.front() + " Nr: " + i);
+            i++;
+            try {
+                stapel.dequeue();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
     }
 }
