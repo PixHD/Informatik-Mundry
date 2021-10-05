@@ -1,61 +1,66 @@
 package Main;
 
+import OwnCollection.Queue;
 import PaulCollection.StackAL;
 
 public class MainClass {
 
 
     public static void main(String[] args) throws Exception {
+        Queue stapel = new Queue(32);
+        stapel.enqueue(new Karte(1, "7", "Kreuz", "schwarz"));
+        stapel.enqueue(new Karte(2, "7", "Pik", "schwarz"));
+        stapel.enqueue(new Karte(3, "7", "Herz", "rot"));
+        stapel.enqueue(new Karte(4, "7", "Karo", "rot"));
 
+        stapel.enqueue(new Karte(5, "8", "Kreuz", "schwarz"));
+        stapel.enqueue(new Karte(6, "8", "Pik", "schwarz"));
+        stapel.enqueue(new Karte(7, "8", "Herz", "rot"));
+        stapel.enqueue(new Karte(8, "8", "Karo", "rot"));
 
-        StackAL<String> Stack = new StackAL<>();
+        stapel.enqueue(new Karte(9, "9", "Kreuz", "schwarz"));
+        stapel.enqueue(new Karte(10, "9", "Pik", "schwarz"));
+        stapel.enqueue(new Karte(11, "9", "Herz", "rot"));
+        stapel.enqueue(new Karte(12, "9", "Karo", "rot"));
 
-        String t1 = "Test1";
-        String t2 = "Test2";
-        String t3 = "Test3";
-        int x = 9;
+        stapel.enqueue(new Karte(13, "10", "Kreuz", "schwarz"));
+        stapel.enqueue(new Karte(14, "10", "Pik", "schwarz"));
+        stapel.enqueue(new Karte(15, "10", "Herz", "rot"));
+        stapel.enqueue(new Karte(16, "10", "Karo", "rot"));
 
-        Stack.push(t1);
-        Stack.push(t2);
-        Stack.push(t3);
-        Stack.push(x);
+        stapel.enqueue(new Karte(17, "B", "Kreuz", "schwarz"));
+        stapel.enqueue(new Karte(18, "B", "Pik", "schwarz"));
+        stapel.enqueue(new Karte(19, "B", "Herz", "rot"));
+        stapel.enqueue(new Karte(20, "B", "Karo", "rot"));
 
-        System.out.println(Stack.getSize());
+        stapel.enqueue(new Karte(21, "D", "Kreuz", "schwarz"));
+        stapel.enqueue(new Karte(22, "D", "Pik", "schwarz"));
+        stapel.enqueue(new Karte(23, "D", "Herz", "rot"));
+        stapel.enqueue(new Karte(24, "D", "Karo", "rot"));
 
-        System.out.println(Stack.top());
+        stapel.enqueue(new Karte(25, "K", "Kreuz", "schwarz"));
+        stapel.enqueue(new Karte(26, "K", "Pik", "schwarz"));
+        stapel.enqueue(new Karte(27, "K", "Herz", "rot"));
+        stapel.enqueue(new Karte(28, "K", "Karo", "rot"));
 
-        Stack.pop();
+        stapel.enqueue(new Karte(29, "A", "Kreuz", "schwarz"));
+        stapel.enqueue(new Karte(30, "A", "Pik", "schwarz"));
+        stapel.enqueue(new Karte(31, "A", "Herz", "rot"));
+        stapel.enqueue(new Karte(32, "A", "Karo", "rot"));
 
-        System.out.println(Stack.getSize());
+        alleKarten(stapel);
+    }
 
-
-        /*Queue q = new Queue(10);
-        q.enqueue("1");
-        q.enqueue("2");
-        q.enqueue("3");
-        q.enqueue("4");
-        q.enqueue("5");
-        q.enqueue("6");
-        q.enqueue("7");
-        q.enqueue("8");
-        q.enqueue("9");
-        q.enqueue("10");
-
-        q.printArray();
-        System.out.println();
-        System.out.println("Front: " + q.front());
-
-        for (int i = 0; i <= 9; i++) {
+    public static void alleKarten(Queue stapel) {
+        int i = 0;
+        while(!stapel.isEmpty()) {
+            System.out.println(stapel.front() + " Nr: " + i);
+            i++;
             try {
-                q.dequeue();
+                stapel.dequeue();
             } catch (Exception e) {
                 e.printStackTrace();
             }
         }
-
-        System.out.println();
-        q.printArray();*/
-
-
     }
 }
