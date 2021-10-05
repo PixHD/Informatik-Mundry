@@ -47,7 +47,7 @@ public class StackAL<T> {
      * @param o Object that is saved in Stack
      */
     public void push(Object o) {
-        if(o != null && o.getClass() == ) {
+        if(o != null && o.getClass() == null) {
             try {
                 this.Stack.add((T) o);
             } catch (Exception e) {
