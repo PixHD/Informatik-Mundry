@@ -7,15 +7,20 @@ public class Queue {
     private int count;
     private Object[] queue;
 
+    //Constructor der Queue
     public Queue() {
         front=tail=count=0;
         queue = new Object[10];
     }
 
+
+    //Constructor der Queue mit anzahlsangabe
     public Queue(int anzahl) {
         front=tail=count=0;
         queue = new Object[anzahl];
     }
+
+    //Fügt ein neues Objekt der Queue hinzu
     public void enqueue(Object o) throws Exception {
         if(count< queue.length) {
             queue[tail] = o;
@@ -31,6 +36,7 @@ public class Queue {
         }
     }
 
+    //Entfernt das oberste Elemt der Queue
     public void dequeue() throws Exception {
         if(!isEmpty()) {
             front = (front+1)%queue.length;
@@ -40,10 +46,12 @@ public class Queue {
         }
     }
 
+    //Fragt ob die Queue leer ist ab
     public boolean isEmpty() {
         return count<=0;
     }
 
+    //Gibt das Erste element der Queue zurück
     public Object front() {
         if(!isEmpty()) {
             return queue[front];
@@ -51,7 +59,7 @@ public class Queue {
             return null;
         }
     }
-
+    //Gibt die Queue aus
     public void printArray() {
         if(!isEmpty()) {
             for (Object o : queue) {
