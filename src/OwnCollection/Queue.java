@@ -19,7 +19,12 @@ public class Queue {
     public void enqueue(Object o) throws Exception {
         if(count< queue.length) {
             queue[tail] = o;
-            tail = (tail+1)%queue.length;
+            if(queue.length == count) {
+                tail = 0;
+            }else {
+                tail++;
+            }
+            //tail = (tail+1)%queue.length;
             count++;
         }else {
             throw new Exception("The Queue is full");
