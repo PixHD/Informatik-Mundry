@@ -2,53 +2,86 @@ package Main;
 
 import OwnCollection.Queue;
 import PaulCollection.StackAL;
+import java.util.Random;
 
 public class MainClass {
 
+    private static Queue ausgangsStapel;
+    private static Queue[] spielerStapel;
+
 
     public static void main(String[] args) throws Exception {
-        Queue stapel = new Queue(32);
-        stapel.enqueue(new Karte(1, "7", "Kreuz", "schwarz"));
-        stapel.enqueue(new Karte(2, "7", "Pik", "schwarz"));
-        stapel.enqueue(new Karte(3, "7", "Herz", "rot"));
-        stapel.enqueue(new Karte(4, "7", "Karo", "rot"));
+        ausgangsStapel = new Queue(32);
+        spielerStapel = new Queue[2];
+        spielerStapel[0] = new Queue(32);
+        spielerStapel[1] = new Queue(32);
 
-        stapel.enqueue(new Karte(5, "8", "Kreuz", "schwarz"));
-        stapel.enqueue(new Karte(6, "8", "Pik", "schwarz"));
-        stapel.enqueue(new Karte(7, "8", "Herz", "rot"));
-        stapel.enqueue(new Karte(8, "8", "Karo", "rot"));
 
-        stapel.enqueue(new Karte(9, "9", "Kreuz", "schwarz"));
-        stapel.enqueue(new Karte(10, "9", "Pik", "schwarz"));
-        stapel.enqueue(new Karte(11, "9", "Herz", "rot"));
-        stapel.enqueue(new Karte(12, "9", "Karo", "rot"));
+        ausgangsStapel.enqueue(new Karte(1, "7", "Kreuz", "schwarz"));
+        ausgangsStapel.enqueue(new Karte(2, "7", "Pik", "schwarz"));
+        ausgangsStapel.enqueue(new Karte(3, "7", "Herz", "rot"));
+        ausgangsStapel.enqueue(new Karte(4, "7", "Karo", "rot"));
 
-        stapel.enqueue(new Karte(13, "10", "Kreuz", "schwarz"));
-        stapel.enqueue(new Karte(14, "10", "Pik", "schwarz"));
-        stapel.enqueue(new Karte(15, "10", "Herz", "rot"));
-        stapel.enqueue(new Karte(16, "10", "Karo", "rot"));
+        ausgangsStapel.enqueue(new Karte(5, "8", "Kreuz", "schwarz"));
+        ausgangsStapel.enqueue(new Karte(6, "8", "Pik", "schwarz"));
+        ausgangsStapel.enqueue(new Karte(7, "8", "Herz", "rot"));
+        ausgangsStapel.enqueue(new Karte(8, "8", "Karo", "rot"));
 
-        stapel.enqueue(new Karte(17, "B", "Kreuz", "schwarz"));
-        stapel.enqueue(new Karte(18, "B", "Pik", "schwarz"));
-        stapel.enqueue(new Karte(19, "B", "Herz", "rot"));
-        stapel.enqueue(new Karte(20, "B", "Karo", "rot"));
+        ausgangsStapel.enqueue(new Karte(9, "9", "Kreuz", "schwarz"));
+        ausgangsStapel.enqueue(new Karte(10, "9", "Pik", "schwarz"));
+        ausgangsStapel.enqueue(new Karte(11, "9", "Herz", "rot"));
+        ausgangsStapel.enqueue(new Karte(12, "9", "Karo", "rot"));
 
-        stapel.enqueue(new Karte(21, "D", "Kreuz", "schwarz"));
-        stapel.enqueue(new Karte(22, "D", "Pik", "schwarz"));
-        stapel.enqueue(new Karte(23, "D", "Herz", "rot"));
-        stapel.enqueue(new Karte(24, "D", "Karo", "rot"));
+        ausgangsStapel.enqueue(new Karte(13, "10", "Kreuz", "schwarz"));
+        ausgangsStapel.enqueue(new Karte(14, "10", "Pik", "schwarz"));
+        ausgangsStapel.enqueue(new Karte(15, "10", "Herz", "rot"));
+        ausgangsStapel.enqueue(new Karte(16, "10", "Karo", "rot"));
 
-        stapel.enqueue(new Karte(25, "K", "Kreuz", "schwarz"));
-        stapel.enqueue(new Karte(26, "K", "Pik", "schwarz"));
-        stapel.enqueue(new Karte(27, "K", "Herz", "rot"));
-        stapel.enqueue(new Karte(28, "K", "Karo", "rot"));
+        ausgangsStapel.enqueue(new Karte(17, "B", "Kreuz", "schwarz"));
+        ausgangsStapel.enqueue(new Karte(18, "B", "Pik", "schwarz"));
+        ausgangsStapel.enqueue(new Karte(19, "B", "Herz", "rot"));
+        ausgangsStapel.enqueue(new Karte(20, "B", "Karo", "rot"));
 
-        stapel.enqueue(new Karte(29, "A", "Kreuz", "schwarz"));
-        stapel.enqueue(new Karte(30, "A", "Pik", "schwarz"));
-        stapel.enqueue(new Karte(31, "A", "Herz", "rot"));
-        stapel.enqueue(new Karte(32, "A", "Karo", "rot"));
+        ausgangsStapel.enqueue(new Karte(21, "D", "Kreuz", "schwarz"));
+        ausgangsStapel.enqueue(new Karte(22, "D", "Pik", "schwarz"));
+        ausgangsStapel.enqueue(new Karte(23, "D", "Herz", "rot"));
+        ausgangsStapel.enqueue(new Karte(24, "D", "Karo", "rot"));
 
-        alleKarten(stapel);
+        ausgangsStapel.enqueue(new Karte(25, "K", "Kreuz", "schwarz"));
+        ausgangsStapel.enqueue(new Karte(26, "K", "Pik", "schwarz"));
+        ausgangsStapel.enqueue(new Karte(27, "K", "Herz", "rot"));
+        ausgangsStapel.enqueue(new Karte(28, "K", "Karo", "rot"));
+
+        ausgangsStapel.enqueue(new Karte(29, "A", "Kreuz", "schwarz"));
+        ausgangsStapel.enqueue(new Karte(30, "A", "Pik", "schwarz"));
+        ausgangsStapel.enqueue(new Karte(31, "A", "Herz", "rot"));
+        ausgangsStapel.enqueue(new Karte(32, "A", "Karo", "rot"));
+
+        spielStapelErstellen();
+        alleKarten(spielerStapel[1]);
+    }
+
+    public static void spielStapelErstellen() {
+        Random zufall = new Random();
+        while(!ausgangsStapel.isEmpty()) {
+            if(zufall.nextInt(3) == 1) {
+                try {
+                    spielerStapel[0].enqueue(ausgangsStapel.front());
+                    ausgangsStapel.dequeue();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+            }else {
+                try {
+                    spielerStapel[1].enqueue(ausgangsStapel.front());
+                    ausgangsStapel.dequeue();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+
+        }
     }
 
     public static void alleKarten(Queue stapel) {
