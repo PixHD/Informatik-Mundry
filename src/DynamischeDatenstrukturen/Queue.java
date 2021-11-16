@@ -38,6 +38,11 @@ public class Queue {
     }
 
     public Object front() {
-        return front;
+        if(isEmpty()) {
+            return null;
+        }else {
+            return front.getItem();
+        }
+
     }
 }

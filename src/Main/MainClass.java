@@ -1,12 +1,54 @@
 package Main;
 
-import OwnCollection.Queue;
+import DynamischeDatenstrukturen.Queue;
 import PaulCollection.StackAL;
 import java.util.Random;
 
 public class MainClass {
 
-    private static Queue ausgangsStapel;
+    public static void main(String[] args) {
+        Queue q = new Queue();
+        q.enqueue("1");
+        q.enqueue("2");
+        q.enqueue("3");
+        System.out.println("Front: " + q.front());
+        q.dequeue();
+        System.out.println("Front: " + q.front());
+        q.dequeue();
+        q.dequeue();
+        q.dequeue();
+        System.out.println("Front: " + q.front());
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /*private static Queue ausgangsStapel;
     private static Queue[] spielerStapel;
 
 
@@ -95,5 +137,5 @@ public class MainClass {
                 e.printStackTrace();
             }
         }
-    }
+    }*/
 }
