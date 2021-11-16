@@ -7,6 +7,8 @@ public class Karte implements Comparable<Karte> {
     private int wertigkeit;
     private String symbol;
     private String farbe;
+
+    //Constructor für die Karte
     public Karte(int wertigkeit,String wert, String symbol, String farbe) {
         this.wertigkeit = wertigkeit;
         this.wert = wert;
@@ -14,11 +16,15 @@ public class Karte implements Comparable<Karte> {
         this.farbe = farbe;
     }
 
+
+    //Vergleicht eine Karte mit einer Anderen
     @Override
     public int compareTo(Karte k) {
         return this.wertigkeit - k.wertigkeit;
     }
 
+
+    //Wandelt die Karte in einen String um
     public String toString() {
         return symbol + " " + wert;
     }
