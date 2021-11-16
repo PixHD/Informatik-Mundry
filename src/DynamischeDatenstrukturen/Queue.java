@@ -38,9 +38,11 @@ public class Queue {
     }
 
     public Object front() {
+        //Fall 1: Queue ist Leer und es wird "null" zurückgegeben
         if(isEmpty()) {
             return null;
         }else {
+            //Fall 2: Es befindet sich mind. 1 Objekt in der Queue
             return front.getItem();
         }
 
