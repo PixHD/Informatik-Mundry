@@ -8,7 +8,7 @@ public class Stack {
         top = null;
     }
 
-    public void push(Box e) {
+    public void push(Object e) {
         if(!isEmpty()) {
             Box tmp = new Box(e);
             tmp.setNext(top);
