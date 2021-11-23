@@ -26,7 +26,7 @@ public class MainClass {
         s.push("3");
         s.pop();
         s.pop();
-        System.out.println(s.top().getItem());
+        System.out.println(s.top());
 
 
     }

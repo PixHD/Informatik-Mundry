@@ -26,9 +26,9 @@ public class Stack {
         }
     }
 
-    public Box top() {
+    public Object top() {
         if(!isEmpty()) {
-            return top;
+            return top.getItem();
         }else {
             return null;
         }
