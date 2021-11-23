@@ -1,13 +1,14 @@
 package Main;
 
 import DynamischeDatenstrukturen.Queue;
+import DynamischeDatenstrukturen.Stack;
 import PaulCollection.StackAL;
 import java.util.Random;
 
 public class MainClass {
 
     public static void main(String[] args) {
-        Queue q = new Queue();
+        /*Queue q = new Queue();
         q.enqueue("1");
         q.enqueue("2");
         q.enqueue("3");
@@ -17,7 +18,16 @@ public class MainClass {
         q.dequeue();
         q.dequeue();
         q.dequeue();
-        System.out.println("Front: " + q.front());
+        System.out.println("Front: " + q.front());*/
+
+        Stack s = new Stack();
+        s.push("1");
+        s.push("2");
+        s.push("3");
+        s.pop();
+        s.pop();
+        System.out.println(s.top().getItem());
+
 
     }
 
