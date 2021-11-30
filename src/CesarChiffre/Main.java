@@ -40,7 +40,6 @@ public class Main {
             }
 
             System.out.println(String.valueOf(message));
-            // m + a = c(mod36)
         }else {
             System.out.println("Geben sie eine Nachricht ein: ");
             message = sc.nextLine().replaceAll(" ", "").toLowerCase().toCharArray();
