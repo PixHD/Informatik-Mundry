@@ -10,9 +10,7 @@ public class Stack {
 
     public void push(Object e) {
         if(!isEmpty()) {
-            Box tmp = new Box(e);
-            tmp.setNext(top);
-            top = tmp;
+            top = new Box(e,top);
         }else {
             top = new Box(e);
         }
