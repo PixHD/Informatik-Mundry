@@ -31,10 +31,8 @@ public class Queue {
         if(!isEmpty()) {
             //Fall 1: Liste ist nicht Leer
             front = front.getNext();
-        }else {
-            //Fall 2: Liste ist bereits leer
-           return;
         }
+        //Fall 2: Liste ist bereits Leer
     }
 
     public Object front() {
