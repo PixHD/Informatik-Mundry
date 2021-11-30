@@ -12,13 +12,13 @@ public class MainClass {
         q.enqueue("1");
         q.enqueue("2");
         q.enqueue("3");
-        System.out.println("Front: " + q.front());
+        System.out.println("Front: " + q.front().getItem());
         q.dequeue();
-        System.out.println("Front: " + q.front());
+        System.out.println("Front: " + q.front().getItem());
         q.dequeue();
         q.dequeue();
         q.dequeue();
-        System.out.println("Front: " + q.front());*/
+        System.out.println("Front: " + q.front().getItem());*/
 
         Stack s = new Stack();
         s.push("1");
@@ -26,7 +26,7 @@ public class MainClass {
         s.push("3");
         s.pop();
         s.pop();
-        System.out.println(s.top());
+        System.out.println(s.top().getItem());
 
 
     }
