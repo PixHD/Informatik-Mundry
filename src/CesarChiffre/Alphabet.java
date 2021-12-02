@@ -1,11 +1,11 @@
 package CesarChiffre;
 
-public class Alphabeth {
+public class Alphabet {
 
     private char[] alphabet = new char[36];
     private int key = -1;
 
-    public Alphabeth() {
+    public Alphabet() {
         String chars = "abcdefghijklmnopqrstuvwxyz0123456789";
         alphabet = chars.toCharArray();
     }
@@ -32,7 +32,7 @@ public class Alphabeth {
     public char encryptChar(char c) {
         char encryptedC = '-';
         int CIndex = getIndexFromChar(c);
-        encryptedC = getCharFromIndex((CIndex + key)%36);
+        encryptedC = getCharFromIndex((CIndex + key)%alphabet.length);
 
         return encryptedC;
     }
@@ -40,7 +40,7 @@ public class Alphabeth {
     public char decryptChar(char c) {
         char decryptedC = '-';
         int CIndex = getIndexFromChar(c);
-        decryptedC = getCharFromIndex((CIndex + (36-key))%36);
+        decryptedC = getCharFromIndex((CIndex + (alphabet.length-key))%alphabet.length);
         return decryptedC;
     }
 }

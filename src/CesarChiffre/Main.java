@@ -1,6 +1,5 @@
 package CesarChiffre;
 
-import java.util.Locale;
 import java.util.Scanner;
 
 public class Main {
@@ -13,7 +12,7 @@ public class Main {
     private static boolean decrypt = true;
 
 
-    private static Alphabeth a = new Alphabeth();
+    private static Alphabet a = new Alphabet();
 
     public static void main(String[] args) {
         System.out.println("Möchten Sie eine Nachicht Verschlüsseln? [y/n]");
