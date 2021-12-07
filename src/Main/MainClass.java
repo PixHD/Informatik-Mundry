@@ -1,5 +1,6 @@
 package Main;
 
+import DynamischeDatenstrukturen.LinkedList;
 import DynamischeDatenstrukturen.Queue;
 import DynamischeDatenstrukturen.Stack;
 import PaulCollection.StackAL;
@@ -20,13 +21,20 @@ public class MainClass {
         q.dequeue();
         System.out.println("Front: " + q.front().getItem());*/
 
-        Stack s = new Stack();
+        /*Stack s = new Stack();
         s.push("1");
         s.push("2");
         s.push("3");
         s.pop();
         s.pop();
-        System.out.println(s.top().getItem());
+        System.out.println(s.top().getItem());*/
+
+        LinkedList l = new LinkedList();
+        l.setObject("A");
+        l.setObject("B");
+        l.setObject("C");
+        l.setObject("D");
+        l.setObject("E");
 
 
     }

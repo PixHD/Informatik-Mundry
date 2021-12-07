@@ -1,16 +1,19 @@
 package DynamischeDatenstrukturen;
 
-public class linkedList {
+public class LinkedList {
 
     private Box it = null;
     private Box first = null;
     private Box last = null;
 
 
-    public linkedList(Object o) {
+    public LinkedList(Object o) {
         this.first = new Box(o);
         this.last = first;
         this.it = first;
+    }
+    public LinkedList() {
+        //Nothing happened
     }
 
     public boolean isEmpty() {
@@ -22,7 +25,11 @@ public class linkedList {
     }
 
     public void next() {
-        first = first.getNext();
+        if(hasAccess()) {
+            if(!isEmpty()) {
+                it = it.getNext();
+            }
+        }
     }
 
     public void setObject(Object o) {
@@ -34,11 +41,11 @@ public class linkedList {
     }
 
     public void toFirst() {
-        first = it;
+        it = first;
     }
 
     public void toLast() {
-        last = it;
+        it = last;
     }
 
     public void insert(Object o) {
