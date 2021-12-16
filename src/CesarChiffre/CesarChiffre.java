@@ -12,7 +12,6 @@ public class CesarChiffre {
             c = nachricht.toLowerCase().charAt(i);
             zahlwert = (int) c-96;
             verschluesselt = ((zahlwert + verschiebung) % 26) + 96;
-            System.out.println(verschluesselt);
             geheimtext += (char) verschluesselt;
         }
         return geheimtext;
