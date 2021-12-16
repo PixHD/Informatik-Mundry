@@ -2,9 +2,6 @@ package CesarChiffre;
 
 public class CesarChiffre {
 
-    public char[] cesarAlphabet;
-
-
     public static String verschlüsseln(String nachricht, int verschiebung) {
         char c;
         int zahlwert;
