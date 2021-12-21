@@ -1,18 +1,18 @@
 package DynamischeDatenstrukturen;
 
-public class LinkedList {
+public class DoubleLinkedList {
 
     private Box it = null;
     private Box first = null;
     private Box last = null;
 
 
-    public LinkedList(Object o) {
+    public DoubleLinkedList(Object o) {
         this.first = new Box(o);
         this.last = first;
         this.it = first;
     }
-    public LinkedList() {
+    public DoubleLinkedList() {
         //Nothing happened
     }
 
@@ -64,16 +64,14 @@ public class LinkedList {
                 first = tmp;
                 first.setNext(it);
             }else if(hasAccess()) {
-                Box akt = first;
-                while(akt.getNext() != it) {
-                    akt = akt.getNext();
-                }
-                Box tmp = new Box(o);
-                tmp.setNext(it);
-                akt.setNext(tmp);
+                Box tmp = new Box(o, first,first.getPrev());
+                first.setPrev(tmp);
+                tmp.getPrev().setNext(tmp);
             }
         }
     }
+
+
     public void remove() {
         if(isEmpty()) return; //Fall 1: Liste ist Leer
         if(hasAccess()) {
@@ -99,8 +97,6 @@ public class LinkedList {
         }else {
             return; //Fall 2: Es gibt kein Akt. Objekt
         }
-
-
     }
 
 

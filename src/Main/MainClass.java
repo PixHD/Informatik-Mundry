@@ -30,11 +30,10 @@ public class MainClass {
         System.out.println(s.top().getItem());*/
 
         LinkedList l = new LinkedList();
-        l.setObject("A");
-        l.setObject("B");
-        l.setObject("C");
-        l.setObject("D");
-        l.setObject("E");
+        l.insert("A");
+        l.toFirst();
+        l.remove();
+        System.out.println(l.getObject());
 
 
     }

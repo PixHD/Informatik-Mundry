@@ -15,10 +15,6 @@ public class Main {
     private static Alphabet a = new Alphabet();
 
     public static void main(String[] args) {
-        System.out.println(CesarChiffre.verschlüsseln("HalloWelt", 13));
-    }
-
-    /*public static void main(String[] args) {
         System.out.println("Möchten Sie eine Nachicht Verschlüsseln? [y/n]");
         decrypt = sc.nextLine().equalsIgnoreCase("y");
         if(!decrypt) {
@@ -57,7 +53,7 @@ public class Main {
 
             System.out.println(String.valueOf(message));
         }
-    }*/
+    }
 
 
 }
