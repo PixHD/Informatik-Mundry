@@ -55,6 +55,12 @@ public class DoubleLinkedList {
         }
     }
 
+    public void prev() {
+        if(hasAccess()) {
+            it = it.getPrev();
+        }
+    }
+
     public void insert(Object o) {
         if(o != null) {
             if(isEmpty()) {
