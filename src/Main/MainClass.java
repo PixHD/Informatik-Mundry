@@ -25,11 +25,11 @@ public class MainClass {
         s.pop();
         System.out.println(s.top().getItem());*/
 
-        LinkedList l = new LinkedList();
+        /*LinkedList l = new LinkedList();
         l.insert("A");
         l.toFirst();
         l.remove(pList);
-        System.out.println(l.getObject());
+        System.out.println(l.getObject());*/
 
 
     }
