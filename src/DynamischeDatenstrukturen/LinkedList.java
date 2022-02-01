@@ -74,7 +74,7 @@ public class LinkedList {
             }
         }
     }
-    public void remove() {
+    public void remove(LinkedList pList) {
         if(isEmpty()) return; //Fall 1: Liste ist Leer
         if(hasAccess()) {
             if(it.getNext() == null){

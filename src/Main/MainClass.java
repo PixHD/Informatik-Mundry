@@ -1,10 +1,6 @@
 package Main;
 
 import DynamischeDatenstrukturen.LinkedList;
-import DynamischeDatenstrukturen.Queue;
-import DynamischeDatenstrukturen.Stack;
-import PaulCollection.StackAL;
-import java.util.Random;
 
 public class MainClass {
 
@@ -32,7 +28,7 @@ public class MainClass {
         LinkedList l = new LinkedList();
         l.insert("A");
         l.toFirst();
-        l.remove();
+        l.remove(pList);
         System.out.println(l.getObject());
 
 

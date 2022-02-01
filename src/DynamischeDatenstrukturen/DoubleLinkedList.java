@@ -2,9 +2,9 @@ package DynamischeDatenstrukturen;
 
 public class DoubleLinkedList {
 
-    private Box it = null;
-    private Box first = null;
-    private Box last = null;
+    private Box it;
+    private Box first;
+    private Box last;
 
 
     public DoubleLinkedList(Object o) {
@@ -13,7 +13,7 @@ public class DoubleLinkedList {
         this.it = first;
     }
     public DoubleLinkedList() {
-        //Nothing happened
+        it=first=last=null;
     }
 
     public boolean isEmpty() {
