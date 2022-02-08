@@ -9,8 +9,8 @@ public class List {
     private Box last = null;
 
 
-    public List(ProdJob job) {
-        this.first = new Box(job, null);
+    public List(Object o) {
+        this.first = new Box(o, null);
         this.last = first;
         this.it = null;
     }
@@ -58,7 +58,7 @@ public class List {
         }
     }
 
-    public void insert(ProdJob job) {
+    public void insert(Object job) {
         if(job != null) {
             if(isEmpty()) {
                 first = last = new Box(job, null);
@@ -103,7 +103,7 @@ public class List {
         }
     }
 
-    public void append(ProdJob prodJob) {
+    public void append(Object prodJob) {
         if(prodJob != null) {
             if(isEmpty()) {
                 this.first = new Box(prodJob, null);

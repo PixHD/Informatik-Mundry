@@ -21,10 +21,10 @@ public class PriorityQueue {
         }
     }
 
-    public void priorityEnqueue(ProdJob job) {
+    public void priorityEnqueue(Object job) {
         if (!isEmpty()) {
             hList.toFirst();
-            while (hList.hasAccess() && job.getPrio() >= ((ProdJob) hList.getObject().getItem()).getPrio()) {
+            while (hList.hasAccess() && ((ProdJob)job).getPrio() >= ((ProdJob) hList.getObject().getItem()).getPrio()) {
                 hList.next();
             }
             if(hList.hasAccess()) {
