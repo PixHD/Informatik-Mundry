@@ -24,17 +24,23 @@ public class PriorityQueue {
     public void priorityEnqueue(ProdJob job) {
         if (!isEmpty()) {
             hList.toFirst();
-            while (hList.getObject().getPrio() <= job.getPrio()) {
+            while (hList.hasAccess() && job.getPrio() >= ((ProdJob) hList.getObject().getItem()).getPrio()) {
                 hList.next();
             }
-            hList.next();
+            if(hList.hasAccess()) {
+                hList.insert(job);
+            }else {
+                hList.append(job);
+            }
+
+        }else {
+            hList.append(job);
         }
-        hList.insert(job);
     }
 
     public ProdJob first() {
         hList.toFirst();
-        return hList.getObject();
+        return (ProdJob) hList.getObject().getItem();
     }
 
 

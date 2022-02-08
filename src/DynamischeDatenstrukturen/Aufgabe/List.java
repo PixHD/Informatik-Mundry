@@ -4,19 +4,15 @@ import DynamischeDatenstrukturen.Box;
 
 public class List {
 
-    private ProdJob it = null;
-    private ProdJob first = null;
-    private ProdJob last = null;
+    private Box it = null;
+    private Box first = null;
+    private Box last = null;
 
-
-    public List(String bez, int prio) {
-        this.first = new ProdJob(bez, prio, null);
-        this.last = first;
-        this.it = first;
-    }
 
     public List(ProdJob job) {
-        this.first = this.last = this.it = job;
+        this.first = new Box(job, null);
+        this.last = first;
+        this.it = null;
     }
 
     public List() {
@@ -39,11 +35,11 @@ public class List {
 
     public void setObject(String o) {
         if(hasAccess() && o != null) {
-            it.setBez(o);
+            it.setItem(o);
         }
     }
 
-    public ProdJob getObject() {
+    public Box getObject() {
         if(hasAccess()) {
             return it;
         }
@@ -65,16 +61,16 @@ public class List {
     public void insert(ProdJob job) {
         if(job != null) {
             if(isEmpty()) {
-                first = last = job;
+                first = last = new Box(job, null);
             }else if(first == it){
-                first = job;
+                first = new Box(job, null);
                 first.setNext(it);
             }else if(hasAccess()) {
-                ProdJob akt = first;
+                Box akt = first;
                 while(akt.getNext() != it) {
                     akt = akt.getNext();
                 }
-                ProdJob tmp = job;
+                Box tmp = new Box(job, null);
                 tmp.setNext(it);
                 akt.setNext(tmp);
             }
@@ -85,7 +81,7 @@ public class List {
         if(hasAccess()) {
             if(it.getNext() == null){
                 //Fall 3: Akt. Objet ist Letztes in der Liste
-                ProdJob tmp = first;
+                Box tmp = first;
                 while(tmp.getNext() != it) {
                     tmp = tmp.getNext();
                 }
@@ -94,8 +90,8 @@ public class List {
                 it = null;
             }else {
                 //Fall 4: Es gibt ein Akt. Objekt, welches nicht das Letzte ist.
-                ProdJob tmp = first;
-                ProdJob afterIt = it.getNext();
+                Box tmp = first;
+                Box afterIt = it.getNext();
                 while(tmp.getNext() != it) {
                     tmp = tmp.getNext();
                 }
@@ -110,12 +106,12 @@ public class List {
     public void append(ProdJob prodJob) {
         if(prodJob != null) {
             if(isEmpty()) {
-                this.first = prodJob;
-                this.last = prodJob;
+                this.first = new Box(prodJob, null);
+                this.last = new Box(prodJob, null);
             } else {
                 toLast();
-                this.it.setNext(prodJob);
-                this.last = prodJob;
+                this.it.setNext(new Box(prodJob, null));
+                this.last = new Box(prodJob, null);
             }
         }
     }

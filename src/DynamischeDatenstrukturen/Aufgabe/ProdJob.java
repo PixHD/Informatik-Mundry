@@ -4,26 +4,16 @@ public class ProdJob{
 
     private int prio;
     private String bez;
-    private ProdJob next;
 
-    public ProdJob(String bez,int prio, ProdJob next) {
+    public ProdJob(String bez,int prio) {
         this.bez = bez;
         this.prio = prio;
-        this.next = next;
     }
 
     public void setPrio(int prio) {
         if(prio >= 1) {
             this.prio = prio;
         }
-    }
-
-    public void setNext(ProdJob next) {
-        this.next = next;
-    }
-
-    public ProdJob getNext() {
-        return this.next;
     }
 
     public int getPrio() {
