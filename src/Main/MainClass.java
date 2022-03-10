@@ -1,10 +1,23 @@
 package Main;
 
+import Aufgaben.Seite78.Farbe;
+import Aufgaben.Seite78.Kugel;
+import Aufgaben.Seite78.Rinne;
 import DynamischeDatenstrukturen.LinkedList;
 
 public class MainClass {
 
     public static void main(String[] args) {
+        Kugel k = new Kugel(Farbe.BLAU);
+        Kugel k2 = new Kugel(Farbe.ROSA);
+        Kugel k3 = new Kugel(Farbe.GELB);
+        Kugel k4 = new Kugel(Farbe.BLAU);
+        Rinne r = new Rinne();
+        r.addKugel(k);
+        r.addKugel(k2);
+        r.addKugel(k3);
+        r.addKugel(k4);
+        System.out.println("Farbe: "  +r.getFirstKugel().getFarbe() + "; Gewicht: " + r.getFirstKugel().getWeight());
         /*Queue q = new Queue();
         q.enqueue("1");
         q.enqueue("2");
