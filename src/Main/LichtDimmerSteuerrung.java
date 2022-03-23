@@ -2,13 +2,12 @@ package Main;
 
 public class LichtDimmerSteuerrung {
 
-    private int helligkeit;
+    private int helligkeit = 50;
     private int schrittweite;
     private int max;
 
     public LichtDimmerSteuerrung(int max) {
         this.max = max;
-        this.helligkeit = 50;
         this.schrittweite = 5;
     }
 
